@@ -1,0 +1,61 @@
+.fichas-main {
+  @apply bg-slate-900 text-red-900
+}
+
+.fichas-main_Conatiner {
+  margin: 1rem auto;
+  /* Margen en la parte superior e inferior y centrado horizontalmente */
+  max-width: 90%;
+  /* Ancho máximo del contenedor */
+}
+
+.fichas-lista{
+  list-style-type: none;
+}
+
+.fichas-container {
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 90%;
+  border: 1px solid #9dff00;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+  background-color: rgb(255, 255, 255);
+}
+
+.fichas-container:hover {
+  box-shadow: 0 4px 8px rgba(12, 12, 12, 0.2);
+}
+
+.fichas-label {
+
+  font-weight: 600;
+  /* Texto en negrita */
+  color: #313844;
+  /* Color de texto similar al original */
+}
+
+.fichas-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+.fichas-button:hover {
+  background-color: #0056b3;
+}
+
+.fichas-titulo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+  /* Color de texto similar al original */
+}

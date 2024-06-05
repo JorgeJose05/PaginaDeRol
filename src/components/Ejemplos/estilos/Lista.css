@@ -1,0 +1,49 @@
+
+.list-button-add {
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center justify-center transition-colors duration-200;
+}
+
+.list-modal-overlay {
+  @apply fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center overflow-y-auto;
+}
+
+.list-modal-content {
+  @apply bg-white p-5 rounded-lg;
+}
+
+.list-input-text {
+  @apply border-2 border-gray-600 p-2 rounded w-full mb-4 bg-gray-500;
+}
+
+.list-button-submit,
+.list-button-cancel {
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded w-full transition-colors duration-200;
+}
+
+.list-button-submit:hover {
+  @apply bg-blue-700;
+}
+
+.list-button-cancel {
+  @apply bg-red-500 mt-2;
+}
+
+.list-button-cancel:hover {
+  @apply bg-red-700;
+}
+
+.list-list-item {
+  @apply flex items-center mt-2;
+}
+
+.list-input-number {
+  @apply border-2 border-gray-600 p-2 rounded ml-2 bg-gray-600;
+}
+
+.list-button-delete {
+  @apply bg-red-500 text-white font-bold py-1 px-2 rounded ml-2 transition-colors duration-200;
+}
+
+.list-button-delete:hover {
+  @apply bg-red-700;
+}

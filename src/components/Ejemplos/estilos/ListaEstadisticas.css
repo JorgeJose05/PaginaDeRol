@@ -1,0 +1,55 @@
+.stats-lista-estadisticas {
+  @apply flex flex-col;
+}
+
+.stats-estadistica {
+  @apply mb-4;
+}
+
+.stats-circulos {
+  @apply flex;
+}
+
+.stats-circulo {
+  @apply w-5 h-5 rounded-full border border-black mr-2;
+}
+
+.stats-circulo.lleno {
+  @apply bg-black;
+}
+
+.stats-circulo:hover {
+  @apply cursor-pointer;
+}
+
+.stats-flex {
+  @apply flex items-center;
+}
+
+.stats-mr {
+  @apply mr-2;
+}
+
+.stats-mb {
+  @apply mb-4;
+}
+
+.stats-opacity {
+  @apply opacity-25;
+}
+
+.stats-hover-opacity {
+  @apply opacity-100;
+}
+
+.popup {
+  @apply fixed top-0 left-0 w-50% h-50% flex items-center justify-center bg-black bg-opacity-50;
+}
+
+.popup-content {
+  @apply bg-white w-1/2 p-6 rounded-lg shadow-lg;
+}
+
+.popup img {
+  @apply w-full cursor-pointer mb-4;
+}

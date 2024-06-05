@@ -1,0 +1,45 @@
+.tarjetaPlanta {
+    @apply m-4 p-4 border rounded-md shadow-lg min-w-[300px] max-w-[300px] h-[400px] flex flex-col items-center;
+  }
+  
+  .textoHerbolario {
+    @apply text-white;
+  }
+  
+  .nombrePlanta {
+    @apply text-lg font-semibold mb-2 text-purple-500;
+  }
+  
+  .descripcionPlanta {
+    @apply text-sm text-center text-yellow-400;
+  }
+  
+  .botonFiltro {
+    @apply mx-2 p-2 bg-purple-900 text-white rounded;
+  }
+  
+  .botonReset {
+    @apply mx-2 p-2 bg-purple-900 text-white rounded;
+  }
+
+  .botonFiltroActivo {
+    @apply  border border-blue-500 font-semibold; 
+  }
+
+  .inputBusqueda {
+    @apply mt-4 mb-2 px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500 bg-slate-700 text-white text-base w-full;
+  }
+  
+  .inputBusqueda::placeholder {
+    color: #aaa; 
+  }
+  
+  .inputBusqueda:focus::placeholder {
+    color: #666; 
+  }
+  
+  .inputBusqueda:focus {
+    border-color: #3182ce; 
+    box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2); 
+  }
+  

@@ -1,0 +1,7 @@
+.mainInicio{
+  @apply bg-slate-900
+}
+
+.tituloInicio{
+  @apply text-red-950 text-center font-bold text-2xl
+}

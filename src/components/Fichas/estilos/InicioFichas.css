@@ -1,0 +1,21 @@
+.inicio-fichas-titulo {
+    @apply text-blue-600 font-bold text-left text-3xl ml-12
+}
+
+/*Estilos copiados de ale Luego los cambio pero es para que almenos se funcional*/
+.list-modal-overlay {
+    @apply fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center overflow-y-auto;
+}
+
+.list-input-text {
+    @apply border-2 border-gray-600 p-2 rounded w-full mb-4 bg-gray-500;
+}
+
+.list-button-submit,
+.list-button-cancel {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded w-full transition-colors duration-200;
+}
+
+.list-modal-content {
+    @apply bg-white p-5 rounded-lg;
+}
