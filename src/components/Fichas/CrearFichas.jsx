@@ -83,7 +83,6 @@ function CrearFichas() {
         Crear Ficha
       </button>
       {/*Modales*/}
-
       {mostrarModalJugador && (
         <div className="list-modal-overlay">
           <div className="list-modal-content">
@@ -107,7 +106,6 @@ function CrearFichas() {
           </div>
         </div>
       )}
-
       {mostrarModalNombre && (
         <div className="list-modal-overlay">
           <div className="list-modal-content">
@@ -131,7 +129,6 @@ function CrearFichas() {
           </div>
         </div>
       )}
-
       {mostrarModalRaza && (
         <div className="list-modal-overlay">
           <div className="list-modal-content">
@@ -159,17 +156,31 @@ function CrearFichas() {
           </div>
         </div>
       )}
-
       {mostrarModalSexo && (
         <div className="list-modal-overlay">
           <div className="list-modal-content">
-            <input
-              type="text"
-              value={sexo}
-              onChange={manejarCambioSexo}
-              placeholder="Introduce tu sexo"
-              className="list-input-text"
-            />
+            <h4>Selecciona tu sexo</h4>
+            <label>
+              <input
+                id="masc"
+                type="radio"
+                value="Masculino"
+                checked={sexo === "Masculino"}
+                onChange={manejarCambioSexo}
+              />
+              Masculino
+            </label>
+
+            <label>
+              <input
+                id="fem"
+                type="radio"
+                value="Femenino"
+                checked={sexo === "Femenino"}
+                onChange={manejarCambioSexo}
+              />
+              Femenino
+            </label>
 
             <button onClick={agregarSexo} className="list-button-submit">
               Asignar sexo
