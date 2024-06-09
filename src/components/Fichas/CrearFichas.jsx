@@ -1,5 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import InfoRazas from "./InfoRazas";
 
 function CrearFichas() {
   /*No me hace falta la lista porque solo voy a guardar una ficha a la vez
@@ -85,68 +86,13 @@ function CrearFichas() {
   //el nivel en el json empieza por 0
   //el hp, mp y 5e por ahora se dejan
 
+  const cerrarinfo = (event) => {
+    setMostrarInfoRaza(false);
+  };
+
   const log = (event) => {
     console.log(raza);
   };
-
-  //Cuando se este mostrando el modal info se activa el efecto que le crea las etiquetas
-  useEffect(() => {
-    if (mostrarInfoRaza) {
-      let nomraza = "";
-      //ventajas y deventajas
-      let origen = "";
-      let origenP = "";
-      let cultura = "";
-      let culturaP = "";
-      let creencias = "";
-      let creenciasP = "";
-      let habilidades = "";
-      let habilidadesP = "";
-      let rel = "";
-      let relP = "";
-      let conflictos = "";
-      let conflictosP = "";
-
-      let divcontent = document.getElementById("contenidoInfo");
-      //recuerda createlement settext y add en ese orden importante
-      switch (raza) {
-        case "1":
-          nomraza = document.createElement("h3");
-          nomraza.textContent = "sadasdfads";
-          divcontent.appendChild(nomraza);
-
-          break;
-        case "2":
-          break;
-
-        case "3":
-          break;
-
-        case "4":
-          break;
-
-        case "5":
-          break;
-        case "6":
-          break;
-
-        case "7":
-          break;
-
-        case "8":
-          break;
-
-        case "9":
-          break;
-
-        case "10":
-          break;
-
-        case "11":
-          break;
-      }
-    }
-  }, [mostrarInfoRaza]);
 
   return (
     <div>
@@ -288,6 +234,12 @@ function CrearFichas() {
           <div className="list-modal-content">
             <div id="contenidoInfo">
               {/*Aqui es donde se creara la info con el document.createelemtn */}
+              {/*Aqui es donde se llama a info razas se le pasa por nombreRaza el parametro y se crea*/}
+              <InfoRazas nombreRaza={raza} />
+
+              <button className="list-button-submit" onClick={cerrarinfo}>
+                OK
+              </button>
             </div>
           </div>
         </div>
