@@ -7,6 +7,9 @@ function CrearFichas() {
     y al final previsiualizar la ficha y preguntarle si quiere cambiar algo y si no
     lo guardas todo en el json */
 
+  //**HOY VAMOS A PONER EN ORDEN LAS PREGUNTAS ES DECIR 1 RAZAS Y DESPUES VAMOS HACER BIEN EL APARTADO RAZAS */
+
+  //Esta supongo que no hara falta
   const [jugador, setJugador] = useState("");
   const [mostrarModalJugador, setMostrarModalJugador] = useState(false);
   const manejarCambioJugador = (event) => {
@@ -19,6 +22,7 @@ function CrearFichas() {
     }
   };
 
+  //4- Cuarta pregunta
   const [nombre, setNombre] = useState("");
   const [mostrarModalNombre, setMostrarModalNombre] = useState(false);
   const manejarCambioNombre = (event) => {
@@ -27,12 +31,14 @@ function CrearFichas() {
   const agregarNombre = () => {
     if (nombre !== "") {
       setMostrarModalNombre(false);
-      setMostrarModalRaza(true);
+      setMostrarModalFinal(true);
     }
   };
 
   //const [cantidad, setCantidad] = useState('');
   //const [mostrarModal, setMostrarModal] = useState(false);
+
+  //1 -Primera pregunta
   const [raza, setRaza] = useState("");
   const [mostrarModalRaza, setMostrarModalRaza] = useState(false);
   const manejarCambioRaza = (event) => {
@@ -41,10 +47,11 @@ function CrearFichas() {
   const agregarRaza = () => {
     if (raza !== "") {
       setMostrarModalRaza(false);
-      setMostrarModalSexo(true);
+      setMostrarModalEscuela(true);
     }
   };
 
+  //3- Tercera pregunta
   const [sexo, setSexo] = useState("");
   const [mostrarModalSexo, setMostrarModalSexo] = useState(false);
   const manejarCambioSexo = (event) => {
@@ -53,10 +60,11 @@ function CrearFichas() {
   const agregarSexo = () => {
     if (sexo !== "") {
       setMostrarModalSexo(false);
-      setMostrarModalEscuela(true);
+      setMostrarModalNombre(true);
     }
   };
 
+  //2- Segunda pregunta
   const [escuela, setEscuela] = useState("");
   const [mostrarModalEscuela, setMostrarModalEscuela] = useState(false);
   const manejarCambioEscuela = (event) => {
@@ -65,7 +73,7 @@ function CrearFichas() {
   const agregarEscuela = () => {
     if (escuela !== "") {
       setMostrarModalEscuela(false);
-      setMostrarModalFinal(true);
+      setMostrarModalSexo(true);
     }
   };
   //ESTE ES EL MODAL FINAL CON LA PREVISUALIZACION ANTES DE GUARDAR AL JSON
@@ -73,12 +81,16 @@ function CrearFichas() {
   //el nivel en el json empieza por 0
   //el hp, mp y 5e por ahora se dejan
 
+  const log = (event) => {
+    console.log(raza);
+  };
+
   return (
     <div>
       <h1 className="inicio-fichas-titulo">Fichas</h1>
       <button
         className="fichas-button"
-        onClick={() => setMostrarModalJugador(true)}
+        onClick={() => setMostrarModalRaza(true)}
       >
         Crear Ficha
       </button>
@@ -143,6 +155,57 @@ function CrearFichas() {
               placeholder="Introduce tu raza"
               className="list-input-text"
             />
+
+            <button onClick={log} className="fichas-button">
+              log
+            </button>
+
+            <select
+              name="Razas"
+              id=""
+              value={raza}
+              onChange={manejarCambioRaza}
+            >
+              {/*Neutras*/}
+              {/*Le pongo values para probar*/}
+              <option value="1">Humano</option>
+              <option value="2">Enano</option>
+              <option value="3">Elfo Arcano</option>
+              <option value="4">Tabaxi</option>
+              <option value="5">Centauro</option>
+              <option value="6">Tiefling</option>
+              <option value="7">Triton/Nereida</option>
+              <option value="8">Gigante</option>
+              <option value="9">Golem</option>
+              <option value="10">Gnomo</option>
+              <option value="11">Duende</option>
+
+              {/*Buenas*/}
+              <option value="">Elfo del bosque</option>
+              <option value="">Hada</option>
+              <option value="">Ninfa</option>
+              <option value="">Ent</option>
+              <option value="">Leprechaun</option>
+              <option value="">Silfide</option>
+              <option value="">Satiro</option>
+              <option value="">Mediano</option>
+              <option value="">Fenix</option>
+              <option value="">Driada</option>
+              <option value="">Draconido</option>
+              <option value="">Solvian</option>
+
+              {/*Malas*/}
+              <option value="">Elfo Oscuro</option>
+              <option value="">Vampira</option>
+              <option value="">Sirena</option>
+              <option value="">Licantropo</option>
+              <option value="">Orco</option>
+              <option value="">Sucubo/Incubo</option>
+              <option value="">Ciclope</option>
+              <option value="">Hada oscura</option>
+              <option value="">Minotauro</option>
+              <option value="">Lamia</option>
+            </select>
 
             <button onClick={agregarRaza} className="list-button-submit">
               Seleccionar raza
