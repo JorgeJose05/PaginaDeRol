@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function CrearFichas() {
   /*No me hace falta la lista porque solo voy a guardar una ficha a la vez
@@ -43,6 +43,8 @@ function CrearFichas() {
   const [mostrarModalRaza, setMostrarModalRaza] = useState(false);
   const manejarCambioRaza = (event) => {
     setRaza(event.target.value);
+    //Mostrar la InfoBasica
+    setMostrarInfoRaza(true);
   };
   const agregarRaza = () => {
     if (raza !== "") {
@@ -50,6 +52,8 @@ function CrearFichas() {
       setMostrarModalEscuela(true);
     }
   };
+
+  const [mostrarInfoRaza, setMostrarInfoRaza] = useState(false);
 
   //3- Tercera pregunta
   const [sexo, setSexo] = useState("");
@@ -84,6 +88,65 @@ function CrearFichas() {
   const log = (event) => {
     console.log(raza);
   };
+
+  //Cuando se este mostrando el modal info se activa el efecto que le crea las etiquetas
+  useEffect(() => {
+    if (mostrarInfoRaza) {
+      let nomraza = "";
+      //ventajas y deventajas
+      let origen = "";
+      let origenP = "";
+      let cultura = "";
+      let culturaP = "";
+      let creencias = "";
+      let creenciasP = "";
+      let habilidades = "";
+      let habilidadesP = "";
+      let rel = "";
+      let relP = "";
+      let conflictos = "";
+      let conflictosP = "";
+
+      let divcontent = document.getElementById("contenidoInfo");
+      //recuerda createlement settext y add en ese orden importante
+      switch (raza) {
+        case "1":
+          nomraza = document.createElement("h3");
+          nomraza.textContent = "sadasdfads";
+          divcontent.appendChild(nomraza);
+
+          break;
+        case "2":
+          break;
+
+        case "3":
+          break;
+
+        case "4":
+          break;
+
+        case "5":
+          break;
+        case "6":
+          break;
+
+        case "7":
+          break;
+
+        case "8":
+          break;
+
+        case "9":
+          break;
+
+        case "10":
+          break;
+
+        case "11":
+          break;
+      }
+    }
+  }, [mostrarInfoRaza]);
 
   return (
     <div>
@@ -219,6 +282,17 @@ function CrearFichas() {
           </div>
         </div>
       )}
+
+      {mostrarInfoRaza && (
+        <div className="list-modal-overlay">
+          <div className="list-modal-content">
+            <div id="contenidoInfo">
+              {/*Aqui es donde se creara la info con el document.createelemtn */}
+            </div>
+          </div>
+        </div>
+      )}
+
       {mostrarModalSexo && (
         <div className="list-modal-overlay">
           <div className="list-modal-content">
